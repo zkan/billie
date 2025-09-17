@@ -10,5 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_17_024925) do
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "name"
+    t.float "cost"
+    t.integer "billing_period"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
