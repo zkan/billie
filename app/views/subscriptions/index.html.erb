@@ -2,15 +2,33 @@
 
 <% content_for :title, "Subscriptions" %>
 
-<h1>Subscriptions</h1>
+<h1 class="text-3xl font-bold">Subscriptions</h1>
 
-<div id="subscriptions">
-  <% @subscriptions.each do |subscription| %>
-    <%= render subscription %>
-    <p>
-      <%= link_to "Show this subscription", subscription %>
-    </p>
-  <% end %>
+<div>
+  <%= link_to "New subscription", new_subscription_path %>
 </div>
 
-<%= link_to "New subscription", new_subscription_path %>
+<div id="subscriptions">
+  <table class="w-full table-auto border-collapse text-sm">
+    <thead>
+      <tr>
+        <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">Name</th>
+        <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">Cost</th>
+        <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">Billing period</th>
+        <th class="border-b border-gray-200 p-4 pt-0 pr-8 pb-3 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200"></th>
+      </tr>
+    </thead>
+    <tbody class="bg-white dark:bg-gray-800">
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= subscription.name %></td>
+        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= subscription.cost %></td>
+        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= subscription.billing_period %></td>
+        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
+          <%= link_to "Show", subscription %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
