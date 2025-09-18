@@ -17,7 +17,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create subscription" do
     assert_difference("Subscription.count") do
-      post subscriptions_url, params: { subscription: { billing_period: @subscription.billing_period, cost: @subscription.cost, name: @subscription.name } }
+      post subscriptions_url, params: { subscription: { billing_period: @subscription.billing_period, cost: @subscription.cost, name: @subscription.name, currency: @subscription.currency } }
     end
 
     assert_redirected_to subscription_url(Subscription.last)
@@ -34,7 +34,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update subscription" do
-    patch subscription_url(@subscription), params: { subscription: { billing_period: @subscription.billing_period, cost: @subscription.cost, name: @subscription.name } }
+    patch subscription_url(@subscription), params: { subscription: { billing_period: @subscription.billing_period, cost: @subscription.cost, name: @subscription.name, currency: @subscription.currency } }
     assert_redirected_to subscription_url(@subscription)
   end
 
