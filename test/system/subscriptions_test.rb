@@ -9,10 +9,10 @@ class SubscriptionsTest < ApplicationSystemTestCase
     visit subscriptions_url
     assert_selector "h1", text: "Subscriptions"
     assert_text "MyString in USD"
-    assert_text "1.5"
+    assert_text "$1.50"
     assert_text "2"
     assert_text "MyString in THB"
-    assert_text "199"
+    assert_text "THB 199.00"
     assert_text "2"
   end
 

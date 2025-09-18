@@ -10,6 +10,6 @@ class ApplicationHelperTest < ActionView::TestCase
   end
 
   test "returns THB for THB" do
-    assert_equal "THB", currency_symbol("THB")
+    assert_equal "THB ", currency_symbol("THB")
   end
 end

@@ -22,7 +22,7 @@
     <% @subscriptions.each do |subscription| %>
       <tr>
         <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= subscription.name %></td>
-        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= subscription.cost %></td>
+        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= number_to_currency(subscription.cost, unit: currency_symbol(subscription.currency)) %></td>
         <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400"><%= subscription.billing_period %></td>
         <td class="border-b border-gray-100 p-4 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400">
           <%= link_to "Show", subscription %>
