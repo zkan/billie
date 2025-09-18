@@ -3,6 +3,11 @@
 <% content_for :title, "Subscriptions" %>
 
 <h1 class="text-3xl font-bold">Subscriptions</h1>
+<div class="mt-3 flex flex-col">
+  <div>Avg. Recurring Expenses</div>
+  <div class="py-2 text-3xl font-bold">THB 1,500.85</div>
+  <div>Monthly</div>
+</div>
 
 <div class="flex">
   <%= link_to "New subscription", new_subscription_path, class: "ml-auto inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition" %>

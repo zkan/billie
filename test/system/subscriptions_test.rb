@@ -8,9 +8,15 @@ class SubscriptionsTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit subscriptions_url
     assert_selector "h1", text: "Subscriptions"
+
+    assert_text "Avg. Recurring Expenses"
+    assert_text "THB 1,500.85"
+    assert_text "Monthly"
+
     assert_text "MyString in USD"
     assert_text "$1.50"
     assert_text "2"
+
     assert_text "MyString in THB"
     assert_text "THB 199.00"
     assert_text "2"
