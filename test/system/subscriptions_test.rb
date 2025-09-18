@@ -8,15 +8,22 @@ class SubscriptionsTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit subscriptions_url
     assert_selector "h1", text: "Subscriptions"
+    assert_text "MyString in USD"
+    assert_text "1.5"
+    assert_text "2"
+    assert_text "MyString in THB"
+    assert_text "199"
+    assert_text "2"
   end
 
   test "should create subscription" do
     visit subscriptions_url
     click_on "New subscription"
 
-    fill_in "Billing period", with: @subscription.billing_period
-    fill_in "Cost", with: @subscription.cost
     fill_in "Name", with: @subscription.name
+    fill_in "Cost", with: @subscription.cost
+    fill_in "Currency", with: @subscription.currency
+    fill_in "Billing period", with: @subscription.billing_period
     click_on "Create Subscription"
 
     assert_text "Subscription was successfully created"
@@ -27,9 +34,10 @@ class SubscriptionsTest < ApplicationSystemTestCase
     visit subscription_url(@subscription)
     click_on "Edit this subscription", match: :first
 
-    fill_in "Billing period", with: @subscription.billing_period
-    fill_in "Cost", with: @subscription.cost
     fill_in "Name", with: @subscription.name
+    fill_in "Cost", with: @subscription.cost
+    fill_in "Currency", with: @subscription.currency
+    fill_in "Billing period", with: @subscription.billing_period
     click_on "Update Subscription"
 
     assert_text "Subscription was successfully updated"

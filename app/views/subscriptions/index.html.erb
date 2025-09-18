@@ -4,8 +4,8 @@
 
 <h1 class="text-3xl font-bold">Subscriptions</h1>
 
-<div>
-  <%= link_to "New subscription", new_subscription_path %>
+<div class="flex">
+  <%= link_to "New subscription", new_subscription_path, class: "ml-auto inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition" %>
 </div>
 
 <div id="subscriptions">
@@ -15,7 +15,7 @@
         <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">Name</th>
         <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">Cost</th>
         <th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200">Billing period</th>
-        <th class="border-b border-gray-200 p-4 pt-0 pr-8 pb-3 text-left font-medium text-gray-400 dark:border-gray-600 dark:text-gray-200"></th>
+        <th class="border-b border-gray-200"></th>
       </tr>
     </thead>
     <tbody class="bg-white dark:bg-gray-800">
