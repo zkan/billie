@@ -13,6 +13,10 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_subscription_url
     assert_response :success
+    assert_select "input[name='subscription[name]']"
+    assert_select "input[name='subscription[cost]']"
+    assert_select "input[name='subscription[currency]']"
+    assert_select "input[name='subscription[billing_period]']"
   end
 
   test "should create subscription" do
@@ -31,6 +35,10 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_subscription_url(@subscription)
     assert_response :success
+    assert_select "input[name='subscription[name]']"
+    assert_select "input[name='subscription[cost]']"
+    assert_select "input[name='subscription[currency]']"
+    assert_select "input[name='subscription[billing_period]']"
   end
 
   test "should update subscription" do
