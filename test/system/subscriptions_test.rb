@@ -10,7 +10,7 @@ class SubscriptionsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Subscriptions"
 
     assert_text "Avg. Recurring Expenses"
-    assert_text "THB 1,500.85"
+    assert_text "THB 126.88"
     assert_text "Monthly"
 
     assert_text "MyString in USD"

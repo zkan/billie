@@ -4,6 +4,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions or /subscriptions.json
   def index
     @subscriptions = Subscription.all
+    @average_recurring_expenses = Subscription.average_cost_in_thb
   end
 
   # GET /subscriptions/1 or /subscriptions/1.json
