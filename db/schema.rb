@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_18_010205) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_28_130402) do
   create_table "subscriptions", force: :cascade do |t|
-    t.string "name"
-    t.float "cost"
     t.integer "billing_period"
+    t.float "cost"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "currency"
+    t.string "name"
+    t.datetime "updated_at", null: false
   end
 end
