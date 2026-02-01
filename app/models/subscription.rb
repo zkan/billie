@@ -1,6 +1,8 @@
 class Subscription < ApplicationRecord
   USD_TO_THB = 36.5
 
+  enum :billing_period, [ :monthly, :yearly ]
+
   def cost_in_thb
     case currency
     when "THB"

@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :billing_period, style: "display: block" %>
-    <%= form.number_field :billing_period %>
+    <%= form.select :billing_period, Subscription.billing_periods.keys.map { |period| [period.humanize, period] } %>
   </div>
 
   <div>

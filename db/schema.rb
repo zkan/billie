@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_28_130402) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_01_095746) do
   create_table "subscriptions", force: :cascade do |t|
-    t.integer "billing_period"
+    t.integer "billing_period", null: false
     t.float "cost"
     t.datetime "created_at", null: false
     t.string "currency"
     t.string "name"
     t.datetime "updated_at", null: false
+    t.check_constraint "billing_period IN (0, 1)", name: "check_billing_period_enum"
   end
 end

@@ -16,7 +16,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
     assert_select "input[name='subscription[name]']"
     assert_select "input[name='subscription[cost]']"
     assert_select "input[name='subscription[currency]']"
-    assert_select "input[name='subscription[billing_period]']"
+    assert_select "select[name='subscription[billing_period]']"
   end
 
   test "should create subscription" do
@@ -38,7 +38,7 @@ class SubscriptionsControllerTest < ActionDispatch::IntegrationTest
     assert_select "input[name='subscription[name]']"
     assert_select "input[name='subscription[cost]']"
     assert_select "input[name='subscription[currency]']"
-    assert_select "input[name='subscription[billing_period]']"
+    assert_select "select[name='subscription[billing_period]']"
   end
 
   test "should update subscription" do

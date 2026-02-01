@@ -4,10 +4,10 @@ one:
   name: MyString in USD
   cost: 1.5
   currency: USD
-  billing_period: 1
+  billing_period: monthly
 
 two:
   name: MyString in THB
   cost: 199
   currency: THB
-  billing_period: 2
+  billing_period: yearly

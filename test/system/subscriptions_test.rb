@@ -15,11 +15,11 @@ class SubscriptionsTest < ApplicationSystemTestCase
 
     assert_text "MyString in USD"
     assert_text "$1.50"
-    assert_text "2"
+    assert_text "Monthly"
 
     assert_text "MyString in THB"
     assert_text "THB 199.00"
-    assert_text "2"
+    assert_text "Yearly"
   end
 
   test "should create subscription" do
@@ -29,7 +29,7 @@ class SubscriptionsTest < ApplicationSystemTestCase
     fill_in "Name", with: @subscription.name
     fill_in "Cost", with: @subscription.cost
     fill_in "Currency", with: @subscription.currency
-    fill_in "Billing period", with: @subscription.billing_period
+    select "Monthly", from: "Billing period"
     click_on "Create Subscription"
 
     assert_text "Subscription was successfully created"
@@ -43,7 +43,7 @@ class SubscriptionsTest < ApplicationSystemTestCase
     fill_in "Name", with: @subscription.name
     fill_in "Cost", with: @subscription.cost
     fill_in "Currency", with: @subscription.currency
-    fill_in "Billing period", with: @subscription.billing_period
+    select "Monthly", from: "Billing period"
     click_on "Update Subscription"
 
     assert_text "Subscription was successfully updated"

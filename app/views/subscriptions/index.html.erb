@@ -28,7 +28,7 @@
       <tr>
         <td class="border-b border-gray-100 p-4 pl-8 text-gray-500"><%= subscription.name %></td>
         <td class="border-b border-gray-100 p-4 pl-8 text-gray-500"><%= number_to_currency(subscription.cost, unit: currency_symbol(subscription.currency)) %></td>
-        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500"><%= subscription.billing_period %></td>
+        <td class="border-b border-gray-100 p-4 pl-8 text-gray-500"><%= subscription.billing_period.humanize %></td>
         <td class="border-b border-gray-100 p-4 pl-8 text-gray-500">
           <%= link_to "Show", subscription %>
         </td>
